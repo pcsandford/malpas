@@ -1,0 +1,149 @@
+@import "fontface";
+@import "normalizeThings";
+
+
+/*=======
+Colour Variables
+=======*/
+$white : #FFFFFF;
+$black : #231F20;
+$grey : #BCBEC0;
+$pink : #EE235C;
+$darkPink : #AA1d41;
+$footer : #2C3E50;
+
+body {
+  font-family: 'Qanelas', 'Roboto', sans-serif;
+}
+
+.header {
+  position: relative;
+  width:100%;
+  background-color:rgba(0,0,0,0.5);
+  color:$white;
+  text-align:center;
+  padding:10px 0 60px 0;
+
+  &:after {
+  content: "";
+  position: absolute;
+  background-image: url(images/header-background.png);
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-attachment:fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  opacity: 1; /* Tone the image down further by giving it transparency */
+}
+
+.area__search {
+  height:34px;
+  width:260px;
+  border:2px solid $white;
+  border-radius:2px;
+  margin:10px 40px 0 0;
+  float:right;
+  position: relative;
+
+  &:before {
+    content:"";
+    position: absolute;
+    left:10px;
+    top:0;
+    width:30px;
+    height:50px;
+    background-image:url(images/search-icon.png);
+    background-size:70%;
+    background-repeat:no-repeat;
+    background-position:center 10%;
+  }
+
+ input {
+  position: relative;
+  background:transparent;
+  border:none;
+  left:20px;
+  font-family:"Roboto";
+  color:$white;
+  font-weight:400;
+  width:210px;
+  height:28px;
+  padding:0 5px;
+
+  }
+ }
+
+  h1 {
+    position: relative;
+    left:-1200px;
+  }
+
+  img {
+    max-width:600px;
+    width:60%;
+    margin-top:20px;
+  }
+
+  .subheader {
+    font-family:"Roboto";
+    text-transform:uppercase;
+    font-size:20px;
+    margin:20px 0 40px 0;
+  }
+
+  .button__view-gallery {
+    position: relative;
+    width:234px;
+    background:$pink;
+    text-transform:uppercase;
+    font-weight:300;
+    margin:20px auto 0 auto;
+    padding:5px 0;
+    letter-spacing:5px;
+    transition:all 0.3s;
+    overflow:hidden;
+    cursor:pointer;
+
+    &:before {
+      position: absolute;
+      content:"";
+      bottom:0;
+      left:0;
+      width:100%;
+      height:6px;
+      z-index:10;
+      background-color:$darkPink;
+      transition:all 0.7s;
+    }
+
+    &:hover:before {
+      height:300px;
+    }
+
+    p {
+      font-family:"Roboto";
+      position: relative;
+      z-index:20;
+    }
+  }//.button__view-gallery
+}//.header
+
+.info {
+  padding:60px 230px;
+
+  h2 {
+    text-transform:uppercase;
+    margin-top: 0;
+    font-size:30px;
+  }
+
+  p {
+    font-family:"Roboto";
+    font-weight:300;
+    font-size:24px;
+  }
+}
+
