@@ -306,3 +306,19 @@ body {
   background-image:url(images/computer.png);
 }
 
+.pattern-two {
+  background-image:url(images/hs.png);
+}
+
+.pattern-three {
+  background-image:url(images/ivy.png);
+}
+
+footer {
+  font-family:'Roboto';
+  font-weight:300;
+  color:$white;
+  padding:20px;
+  background-color: $footer;
+}
+
