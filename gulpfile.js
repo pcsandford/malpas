@@ -8,6 +8,8 @@ var autoprefixer = require("gulp-autoprefixer");
 var rename = require("gulp-rename");
 var sourcemaps = require("gulp-sourcemaps");
 var imagemin = require("gulp-imagemin");
+var babel = require("gulp-babel");
+var eslint = require("gulp-eslint");
 
 var browserSync = require("browser-sync");
 var reload = browserSync.reload;
@@ -23,9 +25,22 @@ gulp.task("styles", function(){
     .pipe(reload({stream:true}))
 });
 
+gulp.task('lint', function() {
+  return gulp.src('src/scripts/**/*.js').pipe(eslint({
+    'rules':{
+        'quotes': [1, 'double'],
+        'semi': [1, 'always']
+      }
+    }))
+  .pipe(eslint.format('stylish'))
+  // Brick on failure to be super strict
+  .pipe(eslint.failOnError());
+});
+
 gulp.task("scripts",function(){
   gulp.src("src/scripts/**/*.js")
     .pipe(sourcemaps.init())
+    .pipe(babel({ presets: ['es2015'] }))
     .pipe(plumber())
     .pipe(concat("all.js"))
     .pipe(uglify())
@@ -42,7 +57,7 @@ gulp.task("imageminification",function(){
 });
 
 gulp.task("watch", function(){
-  gulp.watch("src/scripts/**/*.js", ["scripts"]);
+  gulp.watch("src/scripts/**/*.js", ["lint", "scripts"]);
   gulp.watch("src/styles/**/*.scss", ["styles"]);
 });
 
@@ -54,4 +69,4 @@ gulp.task("browser-sync", function() {
   });
 });
 
-gulp.task("default", ["styles", "scripts","imageminification", "watch", "browser-sync"]);
+gulp.task("default", ["lint", "styles", "scripts","imageminification", "watch", "browser-sync"]);
