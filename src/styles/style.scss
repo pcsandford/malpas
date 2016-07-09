@@ -1,7 +1,3 @@
-@import "fontface";
-@import "normalizeThings";
-
-
 /*=======
 Colour Variables
 =======*/
@@ -85,7 +81,37 @@ Style Mixins
   position: relative;
 }
 
+@mixin area__info {
+  width:50%;
+  padding:10px;
+  background-color:$white;
+  position: absolute;
+  left:0;
+  bottom:0;
+  display:flex;
+  justify-content:space-between;
+}
 
+@mixin download--background {
+  width:100%;
+  position: fixed;
+  z-index:1000;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background:rgba(0,0,0,0.5);
+}
+
+@mixin area__download--card {
+  width:50%;
+  padding:10px;
+  background-color:$white;
+  margin:10% 25%;
+  box-shadow:0 0 10px rgba(0,0,0,0.7);
+}
+
+@import "partials";
 
 body {
   font-family: 'Qanelas', 'Roboto', sans-serif;
@@ -224,14 +250,7 @@ body {
   @include area--patterns;
 
   .area__info {
-    width:50%;
-    padding:10px;
-    background-color:$white;
-    position: absolute;
-    left:0;
-    bottom:0;
-    display:flex;
-    justify-content:space-between;
+    @include area__info;
   }
 
   .area__text {
@@ -313,6 +332,23 @@ body {
 .pattern-three {
   background-image:url(images/ivy.png);
 }
+
+/*=======
+DOWNLOAD MODAL
+=======*/
+
+.modal--download__background {
+  @include download--background;
+  display:none;
+
+  .modal--download__card {
+    @include area--download__card;
+  }
+}
+
+/*=======
+FOOTER AREA
+=======*/
 
 footer {
   font-family:'Roboto';

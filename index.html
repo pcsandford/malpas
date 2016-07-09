@@ -15,9 +15,9 @@
 <body>
   <div class="wrapper">
     <section class="header">
-      <div class="area__search">
+     <!--  <div class="area__search">
         <input class="search "type="text" placeholder="FIND YOUR PATTERN">
-      </div>
+      </div> -->
       <div class="area__header">
         <h1>Pattern Arcade</h1>
         <img src="build/images/title-logo.png" alt="Pattern Arcade title logo">
@@ -31,7 +31,7 @@
       <h2>What is the pattern arcade?</h2>
       <p>The Pattern Arcade is a collection of backgrounds that you can use for your own website or print projects. Each pattern can be downloaded as either a .png or .svg file. The .png can be used in your CSS to tile to fill any background size, while the .svg can be modified to match your own colour scheme.</p>
       <h2>Sign up for updates</h2>
-      <p>Please sign up with your email to receive a notification when new patterns are aded. Thank you!</p>
+      <p>Please sign up with your email to receive a notification when new patterns are added. Thank you!</p>
       <form class="area__signup">
         <input type="text" placeholder="Please enter your email">
         <div class="button--signup"><p>Sign Up</p></div>
@@ -100,7 +100,20 @@
     <footer>
       <p>Designed and built by Peter Cameron</p>
     </footer>
+    <!--=======
+    MODAL AREA
+    =======-->
+    <div class="modal--download__background">
+      <div class="modal--download__card">
+        <p class="modal__instructions">Please select the format for your pattern tile and click the button below to begin download.</p>
+        <div class="modal__button--download">Get the Tile</div>
+      </div>
+    </div>
+
   </div><!--.wrapper-->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="build/all.min.js"></script>
 
 </body>
 </html>
