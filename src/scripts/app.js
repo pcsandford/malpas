@@ -1,16 +1,45 @@
 var patternApp = {};
 
+//expand the background when the expand button is clicked
+patternApp.expand = function(expandButton) {
+  $(expandButton).closest("section").toggleClass("section--expanded");
+  $(expandButton).closest(".area__info").toggleClass("area__info--expanded");
+};
+
+//variant on the expand code above:
+// var backgroundPattern = $(expandButton).closest("section").css("background");
+// $(expandButton).closest(".area__info").toggleClass("higher-z");
+// $(".modal--expanded-view").toggleClass("visible");
+// $(".modal--expanded-view--inner").css("background",backgroundPattern);
+
 //show the download modal when the download button is clicked
 patternApp.openDownload = function() {
-  console.log("test");
   $(".modal--download__background").fadeIn();
 };
 
+//close the download when the user clicks exit
+patternApp.closeDownload = function() {
+  $(".modal--download__background").fadeOut();
+}
+
 patternApp.init = function() {
+
+  //click to open the download modal
   $(".button--download").on("click", function() {
-    console.log("test1");
     patternApp.openDownload();
   });
+
+  //click 'back' to close the download modal
+  $(".modal__button--back").on("click", function() {
+    patternApp.closeDownload();
+  });
+
+  //click to expand the pattern
+  $(".icon--expand").on("click",function(){
+    patternApp.expand(this);
+  });
+
+
 };
 
 $(function() {
