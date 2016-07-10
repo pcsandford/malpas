@@ -27,6 +27,7 @@
         <p>View Gallery</p>
       </div>
     </section><!--.header-->
+    <div class="wrapper--inner">
     <section class="info">
       <h2>What is the pattern arcade?</h2>
       <p>The Pattern Arcade is a collection of backgrounds that you can use for your own website or print projects. Each pattern can be downloaded as either a .png or .svg file. The .png can be used in your CSS to tile to fill any background size, while the .svg can be modified to match your own colour scheme.</p>
@@ -37,76 +38,87 @@
         <div class="button--signup"><p>Sign Up</p></div>
       </form>
     </section><!--.info-->
-    <section class="pattern pattern-one">
-      <div class="area__info">
-        <div class="area__text">
-          <h3>Mini Apples</h3>
-          <p>Artists Name</p>
-        </div>
-        <div class="area__icons">
-          <div class="icon--zoom">
+    <div class="wrapper--pattern">
+      <section class="pattern pattern-one" data-area="apples">
+        <div class="area__info">
+          <div class="area__text">
+            <h3>Mini Apples</h3>
+            <p>Artists Name</p>
+          </div>
+          <div class="area__icons">
+            <div class="icon--zoom">
 
-          </div>
-          <div class="icon--expand">
+            </div>
+            <div class="icon--expand" data-pattern="apples">
 
-          </div>
-          <div class="button--download">
-            <img class="icon--download" src="build/images/download-icon.png" alt="Download icon">
-            <img class="icon--download-hover" src="build/images/download-icon-hover.png" alt="Download icon hover">
-          </div>
-        </div>
-      </div>
-    </section><!--pattern-one-->
-    <section class="pattern pattern-two">
-      <div class="area__info">
-        <div class="area__text">
-          <h3>Hearts and Swords</h3>
-          <p>Artists Name</p>
-        </div>
-        <div class="area__icons">
-          <div class="icon--zoom">
-
-          </div>
-          <div class="icon--expand">
-
-          </div>
-          <div class="button--download">
-            <img class="icon--download" src="build/images/download-icon.png" alt="Download icon">
-            <img class="icon--download-hover" src="build/images/download-icon-hover.png" alt="Download icon hover">
+            </div>
+            <div class="button--download">
+              <img class="icon--download" src="build/images/download-icon.png" alt="Download icon">
+              <img class="icon--download-hover" src="build/images/download-icon-hover.png" alt="Download icon hover">
+            </div>
           </div>
         </div>
-      </div>
-    </section><!--pattern-two-->
-    <section class="pattern pattern-three">
-      <div class="area__info">
-        <div class="area__text">
-          <h3>Ivy Lattice</h3>
-          <p>Artists Name</p>
-        </div>
-        <div class="area__icons">
-          <div class="icon--zoom">
+      </section><!--pattern-one-->
+      <section class="pattern pattern-two">
+        <div class="area__info">
+          <div class="area__text">
+            <h3>Hearts and Swords</h3>
+            <p>Artists Name</p>
+          </div>
+          <div class="area__icons">
+            <div class="icon--zoom">
 
-          </div>
-          <div class="icon--expand">
+            </div>
+            <div class="icon--expand">
 
-          </div>
-          <div class="button--download">
-            <img class="icon--download" src="build/images/download-icon.png" alt="Download icon">
-            <img class="icon--download-hover" src="build/images/download-icon-hover.png" alt="Download icon hover">
+            </div>
+            <div class="button--download">
+              <img class="icon--download" src="build/images/download-icon.png" alt="Download icon">
+              <img class="icon--download-hover" src="build/images/download-icon-hover.png" alt="Download icon hover">
+            </div>
           </div>
         </div>
-      </div>
-    </section><!--pattern-three-->
+      </section><!--pattern-two-->
+      <section class="pattern pattern-three">
+        <div class="area__info">
+          <div class="area__text">
+            <h3>Ivy Lattice</h3>
+            <p>Artists Name</p>
+          </div>
+          <div class="area__icons">
+            <div class="icon--zoom">
+
+            </div>
+            <div class="icon--expand">
+
+            </div>
+            <div class="button--download">
+              <img class="icon--download" src="build/images/download-icon.png" alt="Download icon">
+              <img class="icon--download-hover" src="build/images/download-icon-hover.png" alt="Download icon hover">
+            </div>
+          </div>
+        </div>
+      </section><!--pattern-three-->
+     <div class="modal--expanded-view">
+        <div class="modal--expanded-view--inner">
+          <!-- background added here -->
+        </div>
+     </div>
+     </div><!--wrapper--pattern-->
     <footer>
       <p>Designed and built by Peter Cameron</p>
     </footer>
+    </div><!--.wrapper--inner-->
     <!--=======
     MODAL AREA
     =======-->
     <div class="modal--download__background">
       <div class="modal--download__card">
         <p class="modal__instructions">Please select the format for your pattern tile and click the button below to begin download.</p>
-        <div class="modal__button--download">Get the Tile</div>
+        <div class="modal--download__card--buttons">
+          <div class="modal__button modal__button--download">Get the Tile</div>
+          <div class="modal__button modal__button--back">back</div>
+        </div>
       </div>
     </div>
 
