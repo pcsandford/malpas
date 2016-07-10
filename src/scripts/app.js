@@ -12,6 +12,21 @@ patternApp.expand = function(expandButton) {
 // $(".modal--expanded-view").toggleClass("visible");
 // $(".modal--expanded-view--inner").css("background",backgroundPattern);
 
+//show the detailed image when the magnify button is clicked
+patternApp.magnify = function(magnifyTarget) {
+  $(".modal--magnify__background").fadeIn();
+  var magnifiedImage = `${magnifyTarget.zoom}`;
+  var magnifiedImageAlt = `${magnifyTarget.alt}`;
+  $(".modal--magnify__card img").attr({
+    src : magnifiedImage,
+    alt : magnifiedImageAlt
+  });
+};
+
+patternApp.closeMagnify = function() {
+  $(".modal--magnify__background").fadeOut();
+};
+
 //show the download modal when the download button is clicked
 patternApp.openDownload = function() {
   $(".modal--download__background").fadeIn();
@@ -20,7 +35,7 @@ patternApp.openDownload = function() {
 //close the download when the user clicks exit
 patternApp.closeDownload = function() {
   $(".modal--download__background").fadeOut();
-}
+};
 
 patternApp.init = function() {
 
@@ -34,8 +49,19 @@ patternApp.init = function() {
     patternApp.closeDownload();
   });
 
+  //click to show the zoomed-in view
+  $(".icon--zoom").on("click", function() {
+    var magnifyData = $(this).data();
+    patternApp.magnify(magnifyData);
+  });
+
+  //click to close the zoomed-in view
+  $(".modal--magnify__card .button--close").on("click", function() {
+    patternApp.closeMagnify();
+  });
+
   //click to expand the pattern
-  $(".icon--expand").on("click",function(){
+  $(".icon--expand").on("click",function() {
     patternApp.expand(this);
   });
 

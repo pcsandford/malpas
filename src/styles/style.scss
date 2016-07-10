@@ -425,6 +425,25 @@ DOWNLOAD MODAL
 // }
 
 /*=======
+MAGNIFIED MODAL
+=======*/
+.modal--magnify__background {
+@include download--background;
+  display:none;
+}
+
+.modal--magnify__card {
+  @include area--download__card;
+
+  .button--close {
+    @include button--basic;
+    padding:15px 20px;
+    margin:20px;
+    color:$white;
+  }
+}
+
+/*=======
 FOOTER AREA
 =======*/
 
