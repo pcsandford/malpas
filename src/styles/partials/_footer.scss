@@ -1,0 +1,31 @@
+/*=======
+FOOTER AREA
+=======*/
+
+footer {
+  font-family:'Roboto';
+  padding:20px;
+  background-color: $footer;
+  display:flex;
+  justify-content:space-between;
+
+  p {
+    @include text--body;
+    color:$white;
+    font-weight:100;
+  }
+
+  .area__social-links {
+    a img.instagram {
+     width:40px;
+     position: relative;
+     top:-10px;
+    }
+    a img {
+      width:60px;
+      height:auto;
+      margin-right:10px;
+    }
+  }
+}
+
