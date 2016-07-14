@@ -371,7 +371,35 @@ body {
 .pattern-three {
   background-image:url(images/ivy.png);
 }
+/*=======
+THANK YOU MODAL
+=======*/
 
+.modal--thanks__background {
+  @include download--background;
+  display:none;
+
+  .modal--thanks__card {
+    @include area--download__card;
+  }
+
+  .modal--thanks__card--buttons {
+    display:flex;
+    justify-content:center;
+
+    .modal__button {
+    @include button--basic;
+    padding:15px 20px;
+    margin:20px;
+    color:$white;
+  }
+  }
+
+  .modal__instructions {
+    @include text--body;
+  }
+
+}
 /*=======
 DOWNLOAD MODAL
 =======*/
@@ -449,4 +477,10 @@ MAGNIFIED MODAL
 
 .area__info--expanded {
   bottom:240px !important;
+}
+
+.download--small {
+  width:20px;
+  height:20px;
+  background-color:cadetBlue;
 }
