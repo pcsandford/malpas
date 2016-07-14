@@ -37,11 +37,17 @@ patternApp.closeDownload = function() {
   $(".modal--download__background").fadeOut();
 };
 
+patternApp.download = function() {
+  var img = "<a href='build/images/computer.png' download = 'it-works.jpg'><img src ='build/images/computer.png' ></a>";
+  $(".modal--download__card").append(img);
+};
+
 patternApp.init = function() {
 
   //click to open the download modal
   $(".button--download").on("click", function() {
     patternApp.openDownload();
+    patternApp.download();
   });
 
   //click 'back' to close the download modal
