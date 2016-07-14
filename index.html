@@ -39,7 +39,7 @@
       </form>
     </section><!--.info-->
     <div class="wrapper--pattern">
-      <section class="pattern pattern-one" data-area="apples">
+      <section class="pattern pattern-one" data-area="apples" data-small="build/images/computer.png" data-large="build/images/computer_large.png">
         <div class="area__info">
           <div class="area__text">
             <h3>Mini Apples</h3>
@@ -52,10 +52,10 @@
             <div class="icon--expand" data-pattern="apples">
 
             </div>
-            <div class="button--download">
+            <a href='build/images/computer.png' download='small_tile.png'><div class="button--download">
               <img class="icon--download" src="build/images/download-icon.png" alt="Download icon">
               <img class="icon--download-hover" src="build/images/download-icon-hover.png" alt="Download icon hover">
-            </div>
+            </div></a>
           </div>
         </div>
       </section><!--pattern-one-->
@@ -129,9 +129,25 @@
     =======-->
     <div class="modal--download__background">
       <div class="modal--download__card">
-        <p class="modal__instructions">Please select the format for your pattern tile and click the button below to begin download.</p>
+        <p class="modal__instructions">Please select the size for your pattern tile and click the button below to begin download.</p>
+        <ul class="modal__tiles">
+          <!-- append the tiles here when ready for download -->
+        </ul>
         <div class="modal--download__card--buttons">
           <div class="modal__button modal__button--download">Get the Tile</div>
+          <div class="modal__button modal__button--back">back</div>
+        </div>
+      </div>
+    </div>
+
+    <!--=======
+    THANK YOU MODAL AREA
+    =======-->
+    <div class="modal--thanks__background">
+      <div class="modal--thanks__card">
+        <p class="modal__thanks__text">Thank you for downloading your little tile. If you like it, please feel free to share it on twitter. Thank You!</p>
+        <div class="modal--thanks__card--buttons">
+          <div class="modal__button modal__button--tweet">Tweet</div>
           <div class="modal__button modal__button--back">back</div>
         </div>
       </div>
