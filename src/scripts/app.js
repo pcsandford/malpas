@@ -4,6 +4,15 @@ var patternApp = {};
 patternApp.expand = function(expandButton) {
   $(expandButton).closest("section").toggleClass("section--expanded");
   $(expandButton).closest(".area__info").toggleClass("area__info--expanded");
+  $(expandButton).toggleClass("icon--shrink");
+};
+
+//scroll to start of the gallery when button is clicked
+
+patternApp.scrollDown = function() {
+    $("html, body").animate({
+        scrollTop: $("#gallery").offset().top
+    }, 2000);
 };
 
 //variant on the expand code above:
@@ -33,7 +42,7 @@ patternApp.openThanks = function() {
 
 patternApp.closeThanks = function() {
   $(".modal--thanks__background").fadeOut();
-}
+};
 
 //show the download modal when the download button is clicked
 // patternApp.openDownload = function() {
@@ -65,10 +74,13 @@ patternApp.closeThanks = function() {
 // };
 
 patternApp.download = function(patternDownload){
-   var imgSmall = $(patternDownload).closest(".pattern").data("small");
-}
+   var imgSmall = $(patternDownload).closest(".pattern").data("tile");
+};
 
 patternApp.init = function() {
+
+  //click to scroll to the gallery
+  $(".button__view-gallery").on("click", patternApp.scrollDown);
 
   //click to open the download modal
   $(".button--download").on("click", function() {
