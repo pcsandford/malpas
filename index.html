@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="google-site-verification" content="RIy1O1xBb_djHckRdoJNX6RY4LFCl0uUzFPauzgd3lg" />
   <title>Pattern Arcade</title>
 
   <!--fonts-->
@@ -30,20 +32,21 @@
     <div class="wrapper--inner">
     <section class="info">
       <h2>What is the pattern arcade?</h2>
-      <p>The Pattern Arcade is a collection of backgrounds that you can use for your own website or print projects. Each pattern can be downloaded as either a .png or .svg file. The .png can be used in your CSS to tile to fill any background size, while the .svg can be modified to match your own colour scheme.</p>
-      <h2>Sign up for updates</h2>
+      <p>The Pattern Arcade is a collection of backgrounds that you can use for your own website or print projects. Each pattern can be downloaded as a PNG file. The PNG can be used in your CSS to tile to fill any background size.</p>
+      <p>A future update will include the option to download SVG files so you can add custom colours and create your own patterns.</p>
+      <!-- <h2>Sign up for updates</h2>
       <p>Please sign up with your email to receive a notification when new patterns are added. Thank you!</p>
       <form class="area__signup">
         <input type="text" placeholder="Please enter your email">
         <div class="button--signup"><p>Sign Up</p></div>
-      </form>
+      </form> -->
     </section><!--.info-->
-    <div class="wrapper--pattern">
-      <section class="pattern pattern-one" data-area="apples" data-small="build/images/computer.png" data-large="build/images/computer_large.png">
+    <div class="wrapper--pattern" id="gallery">
+      <section class="pattern pattern-one" data-area="apples" data-tile="build/images/computer_color_tile.png.png">
         <div class="area__info">
           <div class="area__text">
             <h3>Mini Apples</h3>
-            <p>Artists Name</p>
+            <!-- p>Artists Name</p> -->
           </div>
           <div class="area__icons">
             <div class="icon--zoom" data-zoom="build/images/computer_large.png" data-alt="Magnified version of pixelart computer">
@@ -63,7 +66,7 @@
         <div class="area__info">
           <div class="area__text">
             <h3>Hearts and Swords</h3>
-            <p>Artists Name</p>
+            <!-- <p>Artists Name</p> -->
           </div>
           <div class="area__icons">
             <div class="icon--zoom">
@@ -83,7 +86,7 @@
         <div class="area__info">
           <div class="area__text">
             <h3>Ivy Lattice</h3>
-            <p>Artists Name</p>
+            <!-- <p>Artists Name</p> -->
           </div>
           <div class="area__icons">
             <div class="icon--zoom">
@@ -99,14 +102,9 @@
           </div>
         </div>
       </section><!--pattern-three-->
-     <div class="modal--expanded-view">
-        <div class="modal--expanded-view--inner">
-          <!-- background added here -->
-        </div>
-     </div>
      </div><!--wrapper--pattern-->
       <footer>
-        <p>Designed and built by Peter Cameron</p>
+        <p>Cameron Codes &copy 2016</p>
         <div class="area__social-links">
           <a href="http://twitter.com/patternarcade" target="_blank"><img src="images/twitter.png" alt="twitter icon linking to www.twitter.com/pattern_arcade"></a>
           <a href="http://instagram.com/pattern_arcade" target="_blank"><img class="instagram" src="images/instagram.png" alt="instagram icon linking to www.instagram.com/pattern_arcade"></a>
@@ -145,7 +143,8 @@
     =======-->
     <div class="modal--thanks__background">
       <div class="modal--thanks__card">
-        <p class="modal__thanks__text">Thank you for downloading your little tile. If you like it, please feel free to share it on twitter. Thank You!</p>
+        <p class="modal__thanks__text--title">Thank you for downloading your little tile.</p>
+        <p class="modal__thanks__text"> If you like it, please feel free to share it on twitter.</p>
         <div class="modal--thanks__card--buttons">
           <div class="modal__button modal__button--tweet">Tweet</div>
           <div class="modal__button modal__button--back">back</div>
