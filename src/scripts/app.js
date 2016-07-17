@@ -1,3 +1,5 @@
+"use strict";
+
 var patternApp = {};
 
 //expand the background when the expand button is clicked

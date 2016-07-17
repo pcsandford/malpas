@@ -231,20 +231,6 @@ body {
     padding:10px 20px 60px 20px;
   }
 
-/* Portrait tablet and small desktops */
-@media (max-width: 940px) {
-    // background-color:red;
-}
-
-/* Landscape phone to portrait tablet */
-@media (max-width: 768px) {
-  // background-color:green;
-}
-
-/* Landscape phones and down */
-@media (max-width: 480px) {
-  // background-color:blue;
-}
 
 .area__search {
   height:34px;
@@ -300,6 +286,11 @@ body {
     @media (max-width: 480px) {
       width:300px;
     }
+
+    @media (max-width: 340px) {
+      width:300px;
+      margin-left:-10px;
+    }
   }
 
   .subheader {
@@ -343,15 +334,27 @@ body {
   h2 {
     @include text--subheader;
     margin-top:0;
+
+    @media (max-width: 480px) {
+     font-size:24px;
+    }
   }
 
   p {
     @include text--body;
+
+    @media (max-width: 480px) {
+     font-size:18px;
+    }
   }
 
   .area__signup {
     width:100%;
     display:flex;
+
+    @media (max-width: 768px) {
+     flex-direction:column;
+    }
 
     input {
       background-color:$grey;
@@ -361,15 +364,39 @@ body {
       font-family:'Roboto';
       font-weight:300;
       border-radius:2px;
+
+      @media (max-width: 768px) {
+        margin-bottom:20px;
+        line-height:30px;
+      }
+
+      @media (max-width: 480px) {
+        font-size:18px;
+      }
+    }
+
+    input.input__email {
+       @media (max-width: 768px) {
+        height:40px;;
+      }
+    }
+
+    input:focus {
+      outline:none;
+      color: $white;
     }
 
     .button--signup {
       @include button--basic;
       text-align:center;
-      width:234px;
+      min-width:234px;
       color:$white;
       font-weight:300;
       margin:0 30px;
+
+      @media (max-width: 480px) {
+        margin:0;
+      }
 
       p {
       font-size:18px;
@@ -388,20 +415,28 @@ body {
     @media (max-width: 808px) {
      width:100%;
     }
+
+    @media (max-width: 480px) {
+     padding:10px 10px 10px 15px;
+    }
   }
 
   .area__text {
     display:flex;
     align-items:center;
 
+    @media (max-width: 340px) {
+      max-width:100px;
+      }
+
     h3 {
       @include text--subheader;
       margin: 0;
 
       @media (max-width: 480px) {
-      font-size:24px;
+      font-size:18px;
       // margin-top:5px;
-    }
+      }
     }
 
     p {
@@ -422,6 +457,7 @@ body {
       background-repeat:no-repeat;
       margin-right: 20px;
       cursor:pointer;
+      flex-shrink:0;
     }
 
     .icon--expand {
@@ -434,10 +470,12 @@ body {
       margin-right: 25px;
       cursor:pointer;
       transition:all 0.3s;
+      flex-shrink:0;
     }
 
     .icon--shrink {
       background-image:url(images/shrink-icon.png) !important;
+      flex-shrink:0;
     }
 
     .button--download {
@@ -473,11 +511,19 @@ body {
 }
 
 .pattern-two {
-  background-image:url(images/hs.png);
+  background-image:url(images/heart_color_tile.png);
 }
 
 .pattern-three {
-  background-image:url(images/ivy.png);
+  background-image:url(images/heart_bw_tile.png);
+}
+
+.pattern-four {
+  background-image:url(images/ladders_color_tile.png);
+}
+
+.pattern-five {
+  background-image:url(images/ladders_bw_tile.png);
 }
 /*=======
 THANK YOU MODAL
@@ -492,10 +538,22 @@ THANK YOU MODAL
     padding:20px 30px 40px;
     text-align:center;
 
+    @media (max-width: 768px) {
+        width:80%;
+        margin:10%;
+      }
+
+
+
     p.modal__thanks__text--title {
       font-size:30px;
       width:100%;
       padding:0px 35px;
+
+      @media (max-width: 480px) {
+        padding:0;
+        font-size:24px;
+      }
     }
   }
 
@@ -504,11 +562,15 @@ THANK YOU MODAL
     justify-content:center;
 
     .modal__button {
-    @include button--basic;
+    @include button;
     padding:15px 20px;
     margin:20px;
     color:$white;
     flex-shrink:0;
+
+    &:hover {
+      background-color:$darkPink;
+    }
   }
   }
 
@@ -586,12 +648,8 @@ MAGNIFIED MODAL
     color:$white;
 
    &:hover {
-    color:$pink !important;
-  }
-
-  &:hover:after {
-    height:300px;
-  }
+      background-color:$darkPink;
+    }
 }
 }
 
