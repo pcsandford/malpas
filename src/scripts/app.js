@@ -46,6 +46,11 @@ patternApp.closeThanks = function() {
   $(".modal--thanks__background").fadeOut();
 };
 
+patternApp.closeEmailThanks = function() {
+  $(".modal--email--thanks__background").fadeOut();
+  $(".input__email").val("");
+};
+
 //show the download modal when the download button is clicked
 // patternApp.openDownload = function() {
 //   $(".modal--download__background").fadeIn();
@@ -96,6 +101,11 @@ patternApp.init = function() {
   $(".modal__button--back").on("click", function() {
     // patternApp.closeDownload();
     patternApp.closeThanks();
+  });
+
+  //click 'back' to close the email thank you modal
+  $(".modal--email__button--back").on("click", function() {
+    patternApp.closeEmailThanks();
   });
 
    //click 'get tiles' to download the tiles and close the modal

@@ -9,6 +9,6 @@ $(".button--signup").on("click", function() {
         data: {message: message},
         dataType: "json"
     });
-    alert('Thanks for the email, we\'ll be in touch promptly.');
+    $(".modal--email--thanks__background").fadeIn();
     return false;
   });
